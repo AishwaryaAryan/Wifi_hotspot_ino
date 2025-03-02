@@ -1,0 +1,31 @@
+#include <ESP8266WiFi.h>
+
+// Define SSID and Password for AP
+const char *ssid = "Realme P1";  // Set your WiFi Name (SSID)
+const char *password = "12345678";  // Set your WiFi Password (8+ chars)
+
+// Static IP configuration (Optional)
+IPAddress local_IP(192, 168, 1, 1);
+IPAddress gateway(192, 168, 1, 1);
+IPAddress subnet(255, 255, 255, 0);
+
+void setup() {
+  Serial.begin(9600);
+  Serial.println();
+  
+  // Configure as Access Point
+  WiFi.softAPConfig(local_IP, gateway, subnet);
+  WiFi.softAP(ssid, password);  // Start AP with password (Open AP if password is empty "")
+
+  Serial.print("WiFi Hotspot Created! SSID: ");
+  Serial.println(ssid);
+  Serial.print("IP Address: ");
+  Serial.println(WiFi.softAPIP());  // Print AP IP address
+}
+
+void loop() {
+  // Print connected device count
+  Serial.print("Connected devices: ");
+  Serial.println(WiFi.softAPgetStationNum());  // Get number of connected devices
+  delay(5000);
+}
