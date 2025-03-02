@@ -1,0 +1,28 @@
+# ESP8266 WiFi Hotspot (Access Point Mode) 📶
+
+## Overview  
+This project configures an *ESP8266 as a WiFi hotspot* (Access Point), allowing other devices to connect to it.
+
+## Features  
+✅ Turns ESP8266 into a *WiFi Hotspot*  
+✅ Allows multiple devices to connect  
+✅ Prints *IP Address & connected device count*  
+
+## Hardware Requirements  
+- *ESP8266* (NodeMCU, Wemos D1 Mini, etc.)  
+- *Arduino IDE* with ESP8266 board installed  
+
+## Installation & Usage  
+1. Open wifi_hotspot.ino in Arduino IDE.  
+2. Set your preferred ssid and password.  
+3. Upload the code to the ESP8266.  
+4. Open the Serial Monitor at *9600 baud*.  
+5. The ESP8266 will display:  
+   - The *SSID* (network name)  
+   - The *IP Address* for connected devices  
+   - The number of connected devices  
+
+## Code Explanation  
+- The ESP8266 creates a *WiFi network* with the given SSID and password.  
+- Devices can *connect* to the hotspot.  
+- The ESP8266 prints the *number of connected devices* in the Serial Monitor.  
